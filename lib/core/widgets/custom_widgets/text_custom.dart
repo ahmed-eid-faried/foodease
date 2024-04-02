@@ -23,10 +23,10 @@ class TextCustom extends StatelessWidget {
   final bool? arabic;
   final TextWidthBasis? textWidthBasis;
   final bool remoteState;
-
-  const TextCustom({
+  final String? fontFamily;
+  const TextCustom(
+    this.text, {
     super.key,
-    required this.text,
     this.fontSize = 12.0,
     this.color,
     this.decorationColor,
@@ -41,29 +41,34 @@ class TextCustom extends StatelessWidget {
     this.textAlign = TextAlign.start,
     this.arabic = false,
     this.remoteState = false,
+    this.fontFamily,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      // textDirection: context.locale.languageCode == 'ar'
-      //     ? TextDirection.rtl
-      //     : TextDirection.ltr,
+      //  context.locale.languageCode == 'ar'
+
+      // textDirection:
+      //     Provider.of<LocalizationController>(context).getCurrentLanguage() ==
+      //             'AR'
+      //         ? TextDirection.rtl
+      //         : TextDirection.ltr,
       remoteState ? text : getTranslated(text, context)!,
       maxLines: maxLines,
       overflow: overflow,
       textAlign: textAlign,
       softWrap: softWrap,
       textWidthBasis: textWidthBasis,
-      style: style ??
-          Theme.of(context).textTheme.headlineMedium!.copyWith(
-                fontSize: fontSize!.ar(),
-                color: color,
-                letterSpacing: letterSpacing,
-                fontWeight: fontWeight,
-                decoration: decoration,
-                decorationColor: decorationColor,
-              ),
+      style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+            fontSize: fontSize!.ar(),
+            color: color,
+            letterSpacing: letterSpacing,
+            fontWeight: fontWeight,
+            decoration: decoration,
+            decorationColor: decorationColor,
+            fontFamily: fontFamily ?? "BentonSans",
+          ),
     );
   }
 }

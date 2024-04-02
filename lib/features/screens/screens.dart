@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 
 List<PageModel> listScreens = [
   const PageModel(
-    title: "Main Page",
+    title: "Onboarding",
     route: Routes.onboarding,
     mobile: true,
     tablet: true,
@@ -49,15 +49,86 @@ List<PageModel> listScreens = [
     locale: true,
     controller: false,
   ),
+  const PageModel(
+    title: "signIn",
+    route: Routes.signIn,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Signup Process",
+    route: Routes.signupProcess,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Payment Method",
+    route: Routes.paymentMethod,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Upload Photo",
+    route: Routes.uploadPhoto,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Set Location",
+    route: Routes.setLocation,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Signup Success Notification",
+    route: Routes.signupSuccessNotification,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Success Notification",
+    route: Routes.successNotification,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),  const PageModel(
+    title: "Verification Code",
+    route: Routes.verificationCode,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
 ];
-
+// VerificationCode
 class Screens extends StatelessWidget {
   const Screens({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: TextCustom(text: LocaleKeys.screens)),
+      appBar: AppBar(title: TextCustom(LocaleKeys.screens)),
       body: SizedBox(
         width: 390.w(context),
         child: SingleChildScrollView(
@@ -74,7 +145,7 @@ class Screens extends StatelessWidget {
                         icon: const Column(
                           children: [
                             CustomIcon(icon: Icons.clear_all),
-                            TextCustom(text: LocaleKeys.clearAll),
+                            TextCustom(LocaleKeys.clearAll),
                           ],
                         )),
                     IconButton(
@@ -82,7 +153,7 @@ class Screens extends StatelessWidget {
                         icon: const Column(
                           children: [
                             CustomIcon(icon: Icons.logout),
-                            TextCustom(text: LocaleKeys.logout),
+                            TextCustom(LocaleKeys.logout),
                           ],
                         )),
                     IconButton(
@@ -90,7 +161,7 @@ class Screens extends StatelessWidget {
                         icon: Column(
                           children: [
                             const CustomIcon(icon: Icons.refresh),
-                            TextCustom(text: LocaleKeys.refresh),
+                            TextCustom(LocaleKeys.refresh),
                           ],
                         )),
                     IconButton(
@@ -100,7 +171,7 @@ class Screens extends StatelessWidget {
                           icon: Column(
                             children: [
                               CustomIcon(icon: Icons.language),
-                              TextCustom(text: "AR"),
+                              TextCustom("AR"),
                             ],
                           )),
                     ),
@@ -109,7 +180,7 @@ class Screens extends StatelessWidget {
                         icon: const Column(
                           children: [
                             CustomIcon(icon: Icons.language),
-                            TextCustom(text: "EN"),
+                            TextCustom("EN"),
                           ],
                         )),
                     IconButton(
@@ -117,7 +188,7 @@ class Screens extends StatelessWidget {
                         icon: Column(
                           children: [
                             const CustomIcon(icon: Icons.portrait),
-                            TextCustom(text: LocaleKeys.portrait),
+                            TextCustom(LocaleKeys.portrait),
                           ],
                         )),
                     IconButton(
@@ -128,7 +199,7 @@ class Screens extends StatelessWidget {
                       icon: Column(
                         children: [
                           const CustomIcon(icon: Icons.error),
-                          TextCustom(text: LocaleKeys.error),
+                          TextCustom(LocaleKeys.error),
                         ],
                       ),
                     ),
@@ -137,7 +208,7 @@ class Screens extends StatelessWidget {
                         icon: Column(
                           children: [
                             const CustomIcon(icon: Icons.landscape),
-                            TextCustom(text: LocaleKeys.landscape),
+                            TextCustom(LocaleKeys.landscape),
                           ],
                         )),
                     IconButton(
@@ -145,7 +216,7 @@ class Screens extends StatelessWidget {
                         icon: const Column(
                           children: [
                             CustomIcon(icon: Icons.dark_mode),
-                            TextCustom(text: LocaleKeys.theme),
+                            TextCustom(LocaleKeys.theme),
                           ],
                         )),
                   ]),
@@ -154,27 +225,27 @@ class Screens extends StatelessWidget {
                 children: [
                   const SizedBox(width: 100),
                   TextCustom(
-                    text: LocaleKeys.mobile,
+                    LocaleKeys.mobile,
                     fontSize: 10.0,
                   ),
                   const SizedBox(width: AppSize.s20),
                   TextCustom(
-                    text: LocaleKeys.tablet,
+                    LocaleKeys.tablet,
                     fontSize: 10.0,
                   ),
                   const SizedBox(width: AppSize.s20),
                   TextCustom(
-                    text: LocaleKeys.landscape,
+                    LocaleKeys.landscape,
                     fontSize: 10.0,
                   ),
                   const SizedBox(width: AppSize.s20),
                   TextCustom(
-                    text: LocaleKeys.locale,
+                    LocaleKeys.locale,
                     fontSize: 10.0,
                   ),
                   const SizedBox(width: AppSize.s20),
                   const TextCustom(
-                    text: "Contr",
+                    "Contr",
                     fontSize: 10.0,
                   ),
                   const SizedBox(width: AppSize.s20),
@@ -269,7 +340,7 @@ class Page extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-            width: 100,
+            width: 120.sp(context),
             child: ElevatedButton(
               onPressed: (route == null && type == Type.dialog && child != null)
                   ? () =>
@@ -288,15 +359,15 @@ class Page extends StatelessWidget {
           ),
           const Spacer(),
           StateOfScreen(state: mobile),
-          const SizedBox(width: 30),
+          const Spacer(),
           StateOfScreen(state: tablet),
-          const SizedBox(width: 30),
+          const Spacer(),
           StateOfScreen(state: landscape),
-          const SizedBox(width: 30),
+          const Spacer(),
           StateOfScreen(state: locale),
-          const SizedBox(width: 30),
+          const Spacer(),
           StateOfScreen(state: controller),
-          const SizedBox(width: 30),
+          const Spacer(),
         ],
       ),
     );
@@ -315,7 +386,7 @@ class StateOfScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return state ? const TextCustom(text: "YES") : const TextCustom(text: "NO");
+    return state ? const TextCustom("YES") : const TextCustom("NO");
   }
 }
 

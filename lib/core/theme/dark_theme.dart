@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:foodease/core/utill/color_resources.dart';
 
 ThemeData dark = ThemeData(
-  fontFamily: 'TitilliumWeb',
+  fontFamily: 'BentonSans',
   primaryColor: const Color(0xFF53E78B),
   brightness: Brightness.dark,
   highlightColor: const Color(0xFF252525),
   hintColor: const Color(0xFFc7c7c7),
   cardColor: const Color(0xFF242424),
-  scaffoldBackgroundColor: const Color(0xFF2e2e2e),
+  // scaffoldBackgroundColor: const Color(0xFF2e2e2e),
+  scaffoldBackgroundColor: ColorResources.black,
   colorScheme: const ColorScheme.dark(
     primary: Color(0xFF53E78B),
     secondary: Color(0xFF78BDFC),

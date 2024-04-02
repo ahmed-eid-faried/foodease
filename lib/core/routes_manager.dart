@@ -30,7 +30,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:foodease/features/auth/view/background.dart';
+import 'package:foodease/features/auth/view/payment_method.dart';
+import 'package:foodease/features/auth/view/set_location.dart';
+import 'package:foodease/features/auth/view/signin.dart';
 import 'package:foodease/features/auth/view/signup.dart';
+import 'package:foodease/features/auth/view/signup_process.dart';
+import 'package:foodease/features/auth/view/signup_success_notification.dart';
+import 'package:foodease/features/auth/view/success_notification.dart';
+import 'package:foodease/features/auth/view/upload_photo.dart';
+import 'package:foodease/features/auth/view/verification_code.dart';
 import 'package:foodease/features/onboarding/onboarding.dart';
 import 'package:foodease/features/screens/screens.dart';
 import 'package:foodease/features/splash/screens/splash_screen.dart';
@@ -42,7 +50,16 @@ class Routes {
   static const String backgroundScreen = "/backgroundScreen";
   static const String splashScreen = "/splashScreen";
   static const String signUp = "/signUp";
+  static const String signIn = "/signIn";
+  static const String signupProcess = "/signupProcess";
+  static const String paymentMethod = "/paymentMethod";
+  static const String uploadPhoto = "/uploadPhoto";
+  static const String setLocation = "/setLocation";
+  static const String signupSuccessNotification = "/signupSuccessNotification";
+  static const String successNotification = "/successNotification";
+  static const String verificationCode = "/verificationCode";
 
+ 
   // static const String home = "/home";
   // static const String recentOrders = "/recentOrders";
   // static const String balance = "/balance";
@@ -103,20 +120,22 @@ class RoutesMap {
         return const SplashScreen();
       case Routes.signUp:
         return const SignUp();
-      // case Routes.mystore:
-      //   return const MyStore();
-      // case Routes.addproduct:
-      //   return const AddProduct();
-      // case Routes.orderDetails:
-      //   return const OrderDetails();
-      // case Routes.storedetails:
-      //   return const StoreDetails();
-      // case Routes.supplingRequests:
-      //   return const SupplingRequests();
-      // case Routes.requestDetails:
-      //   return const RequestDetails();
-      // case Routes.cashExchange:
-      //   return const CashExchange();
+      case Routes.signIn:
+        return const SignIn();
+      case Routes.signupProcess:
+        return const SignupProcess();
+      case Routes.paymentMethod:
+        return const PaymentMethod();
+      case Routes.uploadPhoto:
+        return const UploadPhoto();
+      case Routes.setLocation:
+        return const SetLocation();
+      case Routes.signupSuccessNotification:
+        return const SignupSuccessNotification();
+      case Routes.successNotification:
+        return const SuccessNotification();
+      case Routes.verificationCode:
+        return const VerificationCode();
       // case Routes.login:
       //   return const Login();
       // case Routes.changePassword:

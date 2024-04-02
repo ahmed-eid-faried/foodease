@@ -1,25 +1,31 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:foodease/core/helper/responsive/num.dart';
+import 'package:foodease/core/utill/color_resources.dart';
 
 class TextFormFieldCustom extends StatelessWidget {
   const TextFormFieldCustom(
-      {super.key, required this.title, this.fontSize, this.height, this.width});
+      {super.key,
+      required this.title,
+      this.fontSize,
+      this.height,
+      this.width,
+      this.suffixIcon,
+      this.prefixIcon});
   final String title;
   final double? fontSize;
   final double? height;
   final double? width;
-
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width ?? 325.w(context),
-      height: height ?? 57.h(context),
+      // height: height ?? 57.h(context),
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: ColorResources.getIconBg(context),
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1, color: Color(0xFFF4F4F4)),
+          side: BorderSide(width: 1, color: ColorResources.getIconBg(context)),
           borderRadius: BorderRadius.circular(15),
         ),
         shadows: const [
@@ -33,13 +39,28 @@ class TextFormFieldCustom extends StatelessWidget {
       ),
       child: TextFormField(
         decoration: InputDecoration(
+          suffixIcon: Padding(
+            padding: prefixIcon == null
+                ? EdgeInsets.zero
+                : const EdgeInsets.all(16.0),
+            child: suffixIcon,
+          ),
+          prefixIcon: prefixIcon == null
+              ? null
+              : Padding(
+                  padding: prefixIcon == null
+                      ? EdgeInsets.zero
+                      : const EdgeInsets.all(16.0),
+                  child: prefixIcon,
+                ),
           border: InputBorder.none,
           hintText: title,
-          contentPadding: const EdgeInsets.all(22),
+          contentPadding: EdgeInsets.symmetric(
+              vertical: 16.h(context), horizontal: 16.w(context)),
           hintStyle: TextStyle(
-            color: const Color(0xFF3B3B3B).withOpacity(0.30),
+            color: ColorResources.getTextBodyGrey(context),
             fontSize: fontSize ?? 14.sp(context),
-            fontFamily: 'BentonSans Regular',
+            fontFamily: 'BentonSans',
             fontWeight: FontWeight.w400,
           ),
         ),

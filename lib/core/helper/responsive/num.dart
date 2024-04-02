@@ -53,8 +53,8 @@ extension MediaQueryValues on num {
       (width / Responsive.widthScreenDesign);
 
   // Method to calculate responsive radius.
-  double r(BuildContext context, double radius) =>
-      radius *
+  double r(BuildContext context) =>
+      this *
       (MediaQuery.of(context).size.shortestSide / Responsive.widthScreenDesign);
 
   // Method to calculate responsive radius.

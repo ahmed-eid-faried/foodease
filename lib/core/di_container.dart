@@ -2,6 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:foodease/core/data/datasource/remote/dio/dio_client.dart';
 import 'package:foodease/core/helper/network_info.dart';
+import 'package:foodease/core/localization/controllers/localization_controller.dart';
 import 'package:foodease/core/utill/app_constants.dart';
 import 'package:foodease/features/splash/controllers/splash_controller.dart';
 import 'package:foodease/features/splash/domain/services/splash_service.dart';
@@ -92,8 +93,8 @@ Future<void> init() async {
   // sl.registerFactory(() => CartController(cartServiceInterface: sl()));
   // sl.registerFactory(
   //     () => SupportTicketController(supportTicketServiceInterface: sl()));
-  // sl.registerFactory(
-  //     () => LocalizationController(sharedPreferences: sl(), dioClient: sl()));
+  sl.registerFactory(
+      () => LocalizationController(sharedPreferences: sl(), dioClient: sl()));
   // sl.registerFactory(() => ThemeController(sharedPreferences: sl()));
   // sl.registerFactory(() => GoogleSignInController());
   // sl.registerFactory(() => FacebookLoginController());

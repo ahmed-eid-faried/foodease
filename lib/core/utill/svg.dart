@@ -5,10 +5,26 @@ class AppSvg {
   static const String onboardinglight1 = "assets/svg/onboardinglight1.svg";
   static const String onboardinglight2 = "assets/svg/onboardinglight2.svg";
   static const String background = "assets/svg/background.svg";
-  static const String logo2 = "assets/svg/logo2.svg";
+  // static const String logo2 = "assets/svg/logo2.svg";  //ERROR: THIS IS IMAGE TAG
   static const String facebook = "assets/svg/facebook.svg";
   static const String google = "assets/svg/google.svg";
+  static const String email = "assets/svg/email.svg";
+  static const String man = "assets/svg/man.svg";
+  static const String password = "assets/svg/password.svg";
+  static const String check = "assets/svg/check.svg";
+  static const String visible = "assets/svg/visible.svg";
+  static const String back = "assets/svg/back.svg";
+  static const String payoneer = "assets/svg/payoneer.svg";
+  static const String paypal = "assets/svg/paypal.svg";
+  static const String visa = "assets/svg/visa.svg";
+  static const String gallery = "assets/svg/gallery.svg";
+  static const String camera = "assets/svg/camera.svg";
+  static const String location = "assets/svg/location.svg";
+  static const String congrats = "assets/svg/congrats.svg";
 
+  //
+  // static const String point = "assets/svg/point.svg";
+// assets/svg/check.svg
   // static const String biglogorm = "$path/biglogo.svg";
   // static const String value = "$path/value.svg";
   // static const String intro = '$path/intro.svg';

@@ -34,12 +34,25 @@ class ColorResources {
         : const Color(0xFF3FCC01);
   }
 
+  static Color getTextTitleBlack(BuildContext context) {
+    return Provider.of<ThemeController>(context).darkTheme
+        ? const Color(0xFFFFFFFF)
+        : const Color(0xFF09051C);
+  }
+
   static Color getTextBody(BuildContext context) {
     return (Provider.of<ThemeController>(context).darkTheme
         ? const Color(0xFFF1F1F1)
         : const Color(0xFF808080));
   }
 
+  static Color getTextBodyGrey(BuildContext context) {
+    return (Provider.of<ThemeController>(context).darkTheme
+        ? const Color.fromARGB(158, 22, 22, 22)
+        : const Color(0xFFFFFFFF).withOpacity(0.30));
+  }
+
+//  const
   static Color getMenuIconColor(BuildContext context) {
     return Provider.of<ThemeController>(context).darkTheme
         ? const Color(0xFFFFFFFF)
@@ -88,9 +101,16 @@ class ColorResources {
         : const Color(0xFFF9F9F9);
   }
 
+  // static Color getIconBgGreen(BuildContext context) {
+  //   return Provider.of<ThemeController>(context).darkTheme
+  //       ? const Color(0xFF14BE77)
+  //       : const Color(0xFF14BE77);
+  // }
+
   static Color getHomeBg(BuildContext context) {
     return Provider.of<ThemeController>(context).darkTheme
-        ? const Color(0xFF3d3d3d)
+        // ? const Color(0xFF3d3d3d)
+        ? const Color(0xFF000000)
         : const Color(0xFFFCFCFC);
   }
 
@@ -210,6 +230,7 @@ class ColorResources {
   static const Color grey = Color(0xffF1F1F1);
   static const Color red = Color(0xFFD32F2F);
   static const Color yellow = Color(0xFFFFAA47);
+  static const Color yellow2 = Color(0xFFFFE14D);
   static const Color hintTextColor = Color(0xff9E9E9E);
   static const Color gainsBg = Color(0xffE6E6E6);
   static const Color textBg = Color(0xffF3F9FF);

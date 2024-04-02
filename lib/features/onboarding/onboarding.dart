@@ -25,36 +25,52 @@ class Onboarding extends StatelessWidget {
             ),
           ),
           const SizedBox().h(42, context),
-          InkWell(
-            onTap: () {},
-            child: Container(
-              width: 157.w(context),
-              height: 57.h(context),
-              decoration: ShapeDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment(0.99, -0.15),
-                  end: Alignment(-0.99, 0.15),
-                  colors: [Color(0xFF53E78B), Color(0xFF14BE77)],
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-              child: Center(
-                child: Text(
-                  'Next',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.sp(context),
-                    fontFamily: 'BentonSans Bold',
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-            ),
+          const CustomButtonGreen(
+            title: 'Next',
           ),
           const SizedBox().h(62, context),
         ],
+      ),
+    );
+  }
+}
+
+class CustomButtonGreen extends StatelessWidget {
+  const CustomButtonGreen({
+    super.key,
+    required this.title,
+    this.onTap,
+  });
+  final String title;
+  final void Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: 157.w(context),
+        height: 57.h(context),
+        decoration: ShapeDecoration(
+          gradient: const LinearGradient(
+            begin: Alignment(0.99, -0.15),
+            end: Alignment(-0.99, 0.15),
+            colors: [Color(0xFF53E78B), Color(0xFF14BE77)],
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.sp(context),
+              fontFamily: 'BentonSans Bold',
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
       ),
     );
   }

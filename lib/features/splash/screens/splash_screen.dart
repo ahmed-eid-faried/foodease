@@ -169,8 +169,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodease/core/helper/responsive/num.dart';
 import 'package:foodease/core/utill/color_resources.dart';
-import 'package:foodease/core/utill/svg.dart';
-import 'package:foodease/core/widgets/custom_widgets/svg_pic.dart';
+import 'package:foodease/core/utill/images.dart';
 import 'package:foodease/features/auth/view/background.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -182,8 +181,8 @@ class SplashScreen extends StatelessWidget {
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPictureCustom(
-          AppSvg.logo2,
+        Image.asset(
+          AppImage.logo,
           width: 175.w(context),
           height: 175.w(context),
         ),
