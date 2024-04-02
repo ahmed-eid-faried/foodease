@@ -7,8 +7,7 @@ import 'package:foodease/core/widgets/custom_widgets/appbar/custom_app_bar.dart'
 // import 'package:foodease/core/widgets/common/custom_app_bar_widget.dart';
 import 'package:foodease/core/widgets/custom_widgets/custom_scaffold.dart';
 import 'package:foodease/features/auth/view/otp.dart';
-import 'package:foodease/features/onboarding/onboarding.dart';
-
+ 
 class VerificationCode extends StatelessWidget {
   const VerificationCode({super.key});
 
@@ -45,15 +44,6 @@ class VerificationCode extends StatelessWidget {
                 ),
                 const SizedBox().h(20, context),
                 const Expanded(child: OTPWidget()),
-                // const Spacer(),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomButtonGreen(
-                      title: 'Next',
-                    ),
-                  ],
-                ),
                 const SizedBox().h(60, context),
               ],
             )));

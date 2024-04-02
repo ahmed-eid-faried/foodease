@@ -28,16 +28,16 @@ class _OTPWidgetState extends State<OTPWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Color focusedBorderColor = ColorResources.grey;
-    Color fillColor = ColorResources.black;
-    Color borderColor = ColorResources.grey;
+    Color focusedBorderColor = ColorResources.getIconBg(context);
+    Color fillColor = ColorResources.getIconBg(context);
+    Color borderColor = ColorResources.getHomeBg(context);
 
     final defaultPinTheme = PinTheme(
       width: AppSize.s100.r(context),
       height: AppSize.s100.r(context),
       // textStyle: AppFontStyle.black14w400(),
       decoration: BoxDecoration(
-        color: ColorResources.white,
+        color: fillColor.withOpacity(0.7),
         borderRadius: BorderRadius.circular(AppSize.s22),
         border: Border.all(width: 1, color: borderColor),
       ),
@@ -102,11 +102,14 @@ class _OTPWidgetState extends State<OTPWidget> {
           SizedBox(height: AppSize.s16.h(context)),
           TextButton(
               onPressed: () {},
-              child: const TextCustom(
+              child: TextCustom(
                 LocaleKeys.resendCode,
-                // style: AppFontStyle.red12w500underline()
+                style: TextStyle(
+                  color: ColorResources.getTextTitle(context),
+                  fontSize: 25.sp(context),
+                  fontWeight: FontWeight.w400,
+                ),
               )),
-          // SizedBox(height: AppSize.s24.h(context)),
           const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
