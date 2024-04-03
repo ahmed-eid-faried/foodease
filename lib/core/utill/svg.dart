@@ -28,6 +28,10 @@ class AppSvg {
       "assets/svg/notifications_active.svg";
   static const String search = "assets/svg/search.svg";
   static const String filter = "assets/svg/filter.svg";
+  static const String home = "assets/svg/home.svg";
+  static const String profile = "assets/svg/profile.svg";
+  static const String cart = "assets/svg/cart.svg";
+  static const String chat = "assets/svg/chat.svg";
   //
   // static const String point = "assets/svg/point.svg";
 // assets/svg/check.svg

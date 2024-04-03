@@ -11,35 +11,36 @@ import 'package:provider/provider.dart';
 import 'package:foodease/core/helper/responsive/num.dart';
 
 class MainPageProvider extends ChangeNotifier {
-  final PageController _pageController = PageController(initialPage: 2);
+  late final PageController _pageController; // Change here
   int maxCount = 4;
   int _currentIndex = 0;
 
-  PageController get pageController => _pageController;
   int get currentIndex => _currentIndex;
 
   final List<Page> bottomBarPages = [
-    Page(title: "Home", svg: AppSvg.back, child: const Home()),
-    Page(title: "title", svg: AppSvg.back, child: const SetLocation()),
-    Page(title: "title", svg: AppSvg.back, child: const MethodRessetPassword()),
-    Page(title: "title", svg: AppSvg.back, child: const UploadPhoto()),
+    Page(title: "Home", svg: AppSvg.home, child: const Home()),
+    Page(title: "Profile", svg: AppSvg.profile, child: const SetLocation()),
+    Page(title: "Cart", svg: AppSvg.cart, child: const MethodRessetPassword()),
+    Page(title: "Chat", svg: AppSvg.chat, child: const UploadPhoto()),
   ];
 
-  void changeCurrentIndexOfPage(int nextIndex) {
-    _changeCurrent(nextIndex);
+  MainPageProvider() {
+    _pageController = PageController(initialPage: 0);
+    _pageController.addListener(() {
+      _currentIndex = _pageController.page!.round();
+      notifyListeners();
+    });
   }
 
-  void _changeCurrent(int nextIndex) {
-    _currentIndex = nextIndex;
+  PageController get pageController => _pageController;
+
+  void changeCurrentIndexOfPage(int nextIndex) {
     _pageController.animateToPage(
       nextIndex,
       duration: const Duration(milliseconds: 300),
       curve: Curves.bounceIn,
     );
-    notifyListeners();
   }
-
-  void init() {}
 
   @override
   void dispose() {
@@ -55,16 +56,12 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<MainPageProvider>(context, listen: false);
     final providerListen = Provider.of<MainPageProvider>(context, listen: true);
-    provider.init();
 
     return Scaffold(
       body: PageView(
         controller: provider.pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: List.generate(
-          provider.bottomBarPages.length,
-          (index) => providerListen.bottomBarPages[index].child,
-        ),
+        children: provider.bottomBarPages.map((page) => page.child).toList(),
       ),
       extendBody: true,
       bottomNavigationBar: (provider.bottomBarPages.length <= provider.maxCount)
@@ -76,7 +73,7 @@ class MainPage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                       horizontal: 20.w(context), vertical: 15.h(context)),
                   decoration: ShapeDecoration(
-                    color: const Color(0xFF252525),
+                    color: const Color(0xFF252525).withOpacity(0.75),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -103,8 +100,8 @@ class MainPage extends StatelessWidget {
                                   begin: const Alignment(0.99, -0.15),
                                   end: const Alignment(-0.99, 0.15),
                                   colors: [
-                                    const Color(0xFF53E78B).withOpacity(0.1),
-                                    const Color(0xFF14BE77).withOpacity(0.1)
+                                    const Color(0xFF53E78B).withOpacity(0.2),
+                                    const Color(0xFF14BE77).withOpacity(0.2)
                                   ],
                                 ),
                                 shape: RoundedRectangleBorder(
