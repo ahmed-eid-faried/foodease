@@ -14,6 +14,15 @@ import 'package:provider/provider.dart';
 
 List<PageModel> listScreens = [
   const PageModel(
+    title: "MainPage",
+    route: Routes.mainPage,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
     title: "Onboarding",
     route: Routes.onboarding,
     mobile: true,
@@ -111,7 +120,8 @@ List<PageModel> listScreens = [
     landscape: false,
     locale: true,
     controller: false,
-  ),  const PageModel(
+  ),
+  const PageModel(
     title: "Verification Code",
     route: Routes.verificationCode,
     mobile: true,
@@ -120,8 +130,36 @@ List<PageModel> listScreens = [
     locale: true,
     controller: false,
   ),
+  const PageModel(
+    title: "Method Resset Password",
+    route: Routes.methodRessetPassword,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Password",
+    route: Routes.password,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Home",
+    route: Routes.home,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
 ];
-// VerificationCode
+
+// MainPage
 class Screens extends StatelessWidget {
   const Screens({super.key});
 

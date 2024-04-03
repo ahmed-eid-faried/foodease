@@ -126,6 +126,7 @@ class ButtonCustom extends StatelessWidget {
     this.onPressed,
     this.minWidth,
     this.height,
+    this.padding = 22,
   });
 
   final Widget? icon;
@@ -135,7 +136,7 @@ class ButtonCustom extends StatelessWidget {
   final String? text;
   final Color? color;
   final void Function()? onPressed;
-
+  final double padding;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -147,7 +148,7 @@ class ButtonCustom extends StatelessWidget {
           side: BorderSide(width: 1, color: Colors.grey.withOpacity(0.4)),
           borderRadius: BorderRadius.circular(15),
         ),
-        padding: const EdgeInsets.all(22),
+        padding: EdgeInsets.all(padding),
         // minimumSize: Size(minWidth ?? 0, 0),
         fixedSize: (minWidth == null || height == null)
             ? Size(375.w(context), 60.w(context))

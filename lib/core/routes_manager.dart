@@ -30,6 +30,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:foodease/features/auth/view/background.dart';
+import 'package:foodease/features/auth/view/method_resset_password.dart';
+import 'package:foodease/features/auth/view/password.dart';
 import 'package:foodease/features/auth/view/payment_method.dart';
 import 'package:foodease/features/auth/view/set_location.dart';
 import 'package:foodease/features/auth/view/signin.dart';
@@ -39,6 +41,8 @@ import 'package:foodease/features/auth/view/signup_success_notification.dart';
 import 'package:foodease/features/auth/view/success_notification.dart';
 import 'package:foodease/features/auth/view/upload_photo.dart';
 import 'package:foodease/features/auth/view/verification_code.dart';
+import 'package:foodease/features/home/home.dart';
+import 'package:foodease/features/home/main_page.dart';
 import 'package:foodease/features/onboarding/onboarding.dart';
 import 'package:foodease/features/screens/screens.dart';
 import 'package:foodease/features/splash/screens/splash_screen.dart';
@@ -58,7 +62,12 @@ class Routes {
   static const String signupSuccessNotification = "/signupSuccessNotification";
   static const String successNotification = "/successNotification";
   static const String verificationCode = "/verificationCode";
+  static const String methodRessetPassword = "/methodRessetPassword";
+  static const String password = "/password";
+  static const String home = "/home";
+  static const String mainPage = "/mainPage";
 
+ 
  
   // static const String home = "/home";
   // static const String recentOrders = "/recentOrders";
@@ -136,14 +145,14 @@ class RoutesMap {
         return const SuccessNotification();
       case Routes.verificationCode:
         return const VerificationCode();
-      // case Routes.login:
-      //   return const Login();
-      // case Routes.changePassword:
-      //   return const ChangePassword();
-      // case Routes.forgetPassword:
-      //   return const ForgetPassword();
-      // case Routes.addNewAddress:
-      //   return const AddNewAddress();
+      case Routes.methodRessetPassword:
+        return const MethodRessetPassword();
+      case Routes.password:
+        return const Password();
+      case Routes.home:
+        return const Home();
+      case Routes.mainPage:
+        return const MainPage();
       // case Routes.savedAddressView:
       //   return const SavedAddressView();
       // case Routes.onboarding:

@@ -39,12 +39,12 @@ class TextFormFieldCustom extends StatelessWidget {
       ),
       child: TextFormField(
         decoration: InputDecoration(
-          suffixIcon: Padding(
-            padding: prefixIcon == null
-                ? EdgeInsets.zero
-                : const EdgeInsets.all(16.0),
-            child: suffixIcon,
-          ),
+          // suffixIcon: Padding(
+          //   padding: prefixIcon == null
+          //       ? EdgeInsets.zero
+          //       : const EdgeInsets.all(16.0),
+          //   child: suffixIcon,
+          // ),
           prefixIcon: prefixIcon == null
               ? null
               : Padding(
@@ -53,12 +53,20 @@ class TextFormFieldCustom extends StatelessWidget {
                       : const EdgeInsets.all(16.0),
                   child: prefixIcon,
                 ),
+          suffixIcon: suffixIcon == null
+              ? null
+              : Padding(
+                  padding: suffixIcon == null
+                      ? EdgeInsets.zero
+                      : const EdgeInsets.all(16.0),
+                  child: suffixIcon,
+                ),
           border: InputBorder.none,
           hintText: title,
           contentPadding: EdgeInsets.symmetric(
               vertical: 16.h(context), horizontal: 16.w(context)),
           hintStyle: TextStyle(
-            color: ColorResources.getTextBodyGrey(context),
+            color: ColorResources.getTextTitle(context).withOpacity(0.4),
             fontSize: fontSize ?? 14.sp(context),
             fontFamily: 'BentonSans',
             fontWeight: FontWeight.w400,

@@ -40,21 +40,35 @@ class CustomButtonGreen extends StatelessWidget {
     super.key,
     required this.title,
     this.onTap,
+    this.colorFlip = false,
+    this.width = 157,
+    this.height = 57,
+    this.fontSize,
   });
   final String title;
   final void Function()? onTap;
+  final bool colorFlip;
+  final double? width;
+  final double? height;
+  final double? fontSize;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: 157.w(context),
-        height: 57.h(context),
+        width: width!.w(context),
+        height: height!.h(context),
         decoration: ShapeDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment(0.99, -0.15),
-            end: Alignment(-0.99, 0.15),
-            colors: [Color(0xFF53E78B), Color(0xFF14BE77)],
+          gradient: LinearGradient(
+            begin: const Alignment(0.99, -0.15),
+            end: const Alignment(-0.99, 0.15),
+            colors: colorFlip
+                ? [
+                    Colors.white.withOpacity(0.8),
+                    Colors.white.withOpacity(0.9),
+                    Colors.white,
+                  ]
+                : [const Color(0xFF53E78B), const Color(0xFF14BE77)],
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
@@ -64,8 +78,8 @@ class CustomButtonGreen extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.sp(context),
+              color: colorFlip ? const Color(0xFF53E78B) : Colors.white,
+              fontSize: fontSize ?? 16.sp(context),
               fontFamily: 'BentonSans Bold',
               fontWeight: FontWeight.w400,
             ),

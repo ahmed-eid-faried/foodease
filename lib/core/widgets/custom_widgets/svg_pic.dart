@@ -4,8 +4,8 @@ import 'package:foodease/core/utill/values_manager.dart';
 
 class SvgPictureCustom extends StatelessWidget {
   final String assetsName;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final Color? color;
   final BoxFit boxFit;
   final ColorFilter? colorFilter;

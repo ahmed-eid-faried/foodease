@@ -6,6 +6,7 @@ import 'package:foodease/core/theme/controllers/theme_controller.dart';
 import 'package:foodease/core/theme/dark_theme.dart';
 import 'package:foodease/core/theme/light_theme.dart';
 import 'package:foodease/core/utill/app_constants.dart';
+import 'package:foodease/features/home/main_page.dart';
 import 'package:foodease/features/screens/screens.dart';
 import 'package:foodease/features/splash/controllers/splash_controller.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +20,9 @@ Future<void> main() async {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(
+          create: (context) => MainPageProvider(),
+        ),
         ChangeNotifierProvider(
           create: (context) =>
               ThemeController(sharedPreferences: CacheHelper.sharedPreferences),

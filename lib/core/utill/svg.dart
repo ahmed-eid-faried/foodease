@@ -21,7 +21,13 @@ class AppSvg {
   static const String camera = "assets/svg/camera.svg";
   static const String location = "assets/svg/location.svg";
   static const String congrats = "assets/svg/congrats.svg";
-
+  static const String sms = "assets/svg/sms.svg";
+  static const String message = "assets/svg/message.svg";
+  static const String notifications = "assets/svg/notifications.svg";
+  static const String notificationsActive =
+      "assets/svg/notifications_active.svg";
+  static const String search = "assets/svg/search.svg";
+  static const String filter = "assets/svg/filter.svg";
   //
   // static const String point = "assets/svg/point.svg";
 // assets/svg/check.svg
