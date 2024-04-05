@@ -3,12 +3,10 @@ import 'package:foodease/core/helper/responsive/num.dart';
 import 'package:foodease/core/helper/responsive/widgets.dart';
 import 'package:foodease/core/utill/color_resources.dart';
 import 'package:foodease/core/widgets/custom_widgets/appbar/custom_app_bar.dart';
-// import 'package:foodease/core/widgets/common/custom_app_bar_widget.dart';
-import 'package:foodease/core/widgets/custom_widgets/custom_scaffold.dart';
+ import 'package:foodease/core/widgets/custom_widgets/custom_scaffold.dart';
 import 'package:foodease/core/widgets/custom_widgets/text_form_field_custom.dart';
 import 'package:foodease/features/onboarding/onboarding.dart';
-
-class SignupProcess extends StatelessWidget {
+ class SignupProcess extends StatelessWidget {
   const SignupProcess({super.key});
 
   @override

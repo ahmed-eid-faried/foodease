@@ -157,9 +157,44 @@ List<PageModel> listScreens = [
     locale: true,
     controller: false,
   ),
+  const PageModel(
+    title: "Filter",
+    route: Routes.filter,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "ExploreRestaurant",
+    route: Routes.exploreRestaurant,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
+  const PageModel(
+    title: "Message Screen",
+    route: Routes.messageScreen,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ), const PageModel(
+    title: "Chat Screenn",
+    route: Routes.chatScreen,
+    mobile: true,
+    tablet: true,
+    landscape: false,
+    locale: true,
+    controller: false,
+  ),
 ];
 
-// MainPage
+// ChatScreen
 class Screens extends StatelessWidget {
   const Screens({super.key});
 

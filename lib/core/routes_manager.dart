@@ -41,8 +41,12 @@ import 'package:foodease/features/auth/view/signup_success_notification.dart';
 import 'package:foodease/features/auth/view/success_notification.dart';
 import 'package:foodease/features/auth/view/upload_photo.dart';
 import 'package:foodease/features/auth/view/verification_code.dart';
+import 'package:foodease/features/home/chat.dart';
+import 'package:foodease/features/home/explore_restaurant.dart';
+import 'package:foodease/features/home/filter.dart';
 import 'package:foodease/features/home/home.dart';
 import 'package:foodease/features/home/main_page.dart';
+import 'package:foodease/features/home/message_screen.dart';
 import 'package:foodease/features/onboarding/onboarding.dart';
 import 'package:foodease/features/screens/screens.dart';
 import 'package:foodease/features/splash/screens/splash_screen.dart';
@@ -66,11 +70,11 @@ class Routes {
   static const String password = "/password";
   static const String home = "/home";
   static const String mainPage = "/mainPage";
+  static const String filter = "/filter";
+  static const String exploreRestaurant = "/exploreRestaurant";
 
- 
- 
-  // static const String home = "/home";
-  // static const String recentOrders = "/recentOrders";
+  static const String messageScreen = "/messageScreen";
+  static const String chatScreen = "/chatScreen";
   // static const String balance = "/balance";
   // static const String mystore = "/mystore";
   // static const String addproduct = "/addproduct";
@@ -153,14 +157,14 @@ class RoutesMap {
         return const Home();
       case Routes.mainPage:
         return const MainPage();
-      // case Routes.savedAddressView:
-      //   return const SavedAddressView();
-      // case Routes.onboarding:
-      //   return const Onboarding();
-      // case Routes.customerServiceChat:
-      //   return const CustomerServiceChat();
-      // case Routes.customerServiceIntro:
-      //   return const CustomerServiceIntro();
+      case Routes.filter:
+        return const Filter();
+      case Routes.exploreRestaurant:
+        return const ExploreRestaurant();
+      case Routes.messageScreen:
+        return const MessageScreen();
+      case Routes.chatScreen:
+        return const ChatScreen();
       // case Routes.customServiceDetails:
       //   return const CustomServiceDetails();
       // case Routes.notifications:

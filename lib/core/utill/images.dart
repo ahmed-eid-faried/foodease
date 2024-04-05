@@ -201,4 +201,6 @@ class AppImage {
   static const String banner = 'assets/images/banner.png';
   static const String restaurant = 'assets/images/restaurant.png';
   static const String food = 'assets/images/food.png';
+  static const String man = 'assets/images/man.png';
+  static const String testImage = 'https://api.slingacademy.com/public/sample-photos/1.jpeg';
 }
