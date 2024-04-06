@@ -3,10 +3,10 @@ import 'package:foodease/core/data/model/api_response.dart';
 import 'package:foodease/core/helper/api_checker.dart';
 import 'package:foodease/features/splash/domain/models/config_model.dart';
 import 'package:foodease/features/splash/domain/services/splash_service_interface.dart';
-// import 'package:flutter_sixvalley_ecommerce/data/model/api_response.dart';
-// import 'package:flutter_sixvalley_ecommerce/features/splash/domain/models/config_model.dart';
-// import 'package:flutter_sixvalley_ecommerce/features/splash/domain/services/splash_service_interface.dart';
-// import 'package:flutter_sixvalley_ecommerce/helper/api_checker.dart';
+// import 'package:foodease/data/model/api_response.dart';
+// import 'package:foodease/features/splash/domain/models/config_model.dart';
+// import 'package:foodease/features/splash/domain/services/splash_service_interface.dart';
+// import 'package:foodease/helper/api_checker.dart';
 
 class SplashController extends ChangeNotifier {
   final SplashServiceInterface? splashServiceInterface;

@@ -4,6 +4,11 @@ import 'package:foodease/core/data/datasource/remote/dio/dio_client.dart';
 import 'package:foodease/core/helper/network_info.dart';
 import 'package:foodease/core/localization/controllers/localization_controller.dart';
 import 'package:foodease/core/utill/app_constants.dart';
+import 'package:foodease/features/chat/controllers/chat_controller.dart';
+import 'package:foodease/features/chat/domain/repositories/chat_repository.dart';
+import 'package:foodease/features/chat/domain/repositories/chat_repository_interface.dart';
+import 'package:foodease/features/chat/domain/services/chat_service.dart';
+import 'package:foodease/features/chat/domain/services/chat_service_interface.dart';
 import 'package:foodease/features/splash/controllers/splash_controller.dart';
 import 'package:foodease/features/splash/domain/services/splash_service.dart';
 import 'package:foodease/features/splash/domain/services/splash_service_interface.dart';
@@ -42,7 +47,7 @@ Future<void> init() async {
   // sl.registerLazySingleton(() => OrderRepository(dioClient: sl()));
   // sl.registerLazySingleton(() => ShopRepository(dioClient: sl()));
   // sl.registerLazySingleton(() => CouponRepository(dioClient: sl()));
-  // sl.registerLazySingleton(() => ChatRepository(dioClient: sl()));
+  sl.registerLazySingleton(() => ChatRepository(dioClient: sl()));
   // sl.registerLazySingleton(() => NotificationRepository(dioClient: sl()));
   // sl.registerLazySingleton(
   //     () => ProfileRepository(dioClient: sl(), sharedPreferences: sl()));
@@ -84,7 +89,7 @@ Future<void> init() async {
   //     () => SearchProductController(searchProductServiceInterface: sl()));
   // sl.registerFactory(() => OrderController(orderServiceInterface: sl()));
   // sl.registerFactory(() => CouponController(couponRepo: sl()));
-  // sl.registerFactory(() => ChatController(chatServiceInterface: sl()));
+  sl.registerFactory(() => ChatController(chatServiceInterface: sl()));
   // sl.registerFactory(
   //     () => NotificationController(notificationServiceInterface: sl()));
   // sl.registerFactory(() => ProfileController(profileServiceInterface: sl()));
@@ -159,11 +164,11 @@ Future<void> init() async {
   //     CategoryService(categoryRepoInterface: sl());
   // sl.registerLazySingleton(() => categoryServiceInterface);
 
-  // ChatRepositoryInterface chatRepositoryInterface =
-  //     ChatRepository(dioClient: sl());
-  // sl.registerLazySingleton(() => chatRepositoryInterface);
-  // ChatServiceInterface chatServiceInterface =
-  //     ChatService(chatRepositoryInterface: sl());
+  ChatRepositoryInterface chatRepositoryInterface =
+      ChatRepository(dioClient: sl());
+  sl.registerLazySingleton(() => chatRepositoryInterface);
+  ChatServiceInterface chatServiceInterface =
+      ChatService(chatRepositoryInterface: sl());
   // sl.registerLazySingleton(() => chatServiceInterface);
 
   // ShippingRepositoryInterface shippingRepositoryInterface =
@@ -357,7 +362,7 @@ Future<void> init() async {
   // sl.registerLazySingleton(() => BrandService(brandRepoInterface: sl()));
   // sl.registerLazySingleton(() => CartService(cartRepositoryInterface: sl()));
   // sl.registerLazySingleton(() => CategoryService(categoryRepoInterface: sl()));
-  // sl.registerLazySingleton(() => ChatService(chatRepositoryInterface: sl()));
+  sl.registerLazySingleton(() => ChatService(chatRepositoryInterface: sl()));
   // sl.registerLazySingleton(
   //     () => ShippingService(shippingRepositoryInterface: sl()));
   // sl.registerLazySingleton(

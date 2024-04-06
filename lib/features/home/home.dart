@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:foodease/core/helper/responsive/num.dart';
 import 'package:foodease/core/helper/responsive/widgets.dart';
 import 'package:foodease/core/theme/controllers/theme_controller.dart';

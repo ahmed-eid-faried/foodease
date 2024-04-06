@@ -56,6 +56,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: elevation,
+      //for Material3 disable appbar color change on scroll
+      scrolledUnderElevation: 0,
       backgroundColor:
           (backgroundColor ?? ColorResources.getHomeBg(context)).withOpacity(0),
       centerTitle: centerTitle,

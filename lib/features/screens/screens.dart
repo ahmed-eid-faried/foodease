@@ -183,7 +183,8 @@ List<PageModel> listScreens = [
     landscape: false,
     locale: true,
     controller: false,
-  ), const PageModel(
+  ),
+  const PageModel(
     title: "Chat Screenn",
     route: Routes.chatScreen,
     mobile: true,

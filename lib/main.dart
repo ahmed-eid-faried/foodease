@@ -1,11 +1,14 @@
 import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:foodease/core/di_container.dart' as di;
+import 'package:foodease/core/di_container.dart';
 import 'package:foodease/core/helper/cache_helper.dart';
 import 'package:foodease/core/theme/controllers/theme_controller.dart';
 import 'package:foodease/core/theme/dark_theme.dart';
 import 'package:foodease/core/theme/light_theme.dart';
 import 'package:foodease/core/utill/app_constants.dart';
+import 'package:foodease/features/chat/controllers/chat_controller.dart';
 import 'package:foodease/features/home/home_controller.dart';
 import 'package:foodease/features/home/main_page.dart';
 import 'package:foodease/features/screens/screens.dart';
@@ -17,11 +20,17 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
   HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   await CacheHelper.init();
   runApp(
     MultiProvider(
       providers: [
-         ChangeNotifierProvider(
+        // ChatController
+        ChangeNotifierProvider(
+          create: (context) => ChatController(chatServiceInterface: sl()),
+        ),
+        ChangeNotifierProvider(
           create: (context) => HomeProvider(),
         ),
         ChangeNotifierProvider(

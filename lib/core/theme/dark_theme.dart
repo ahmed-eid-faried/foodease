@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foodease/core/utill/color_resources.dart';
 
 ThemeData dark = ThemeData(
-  
   fontFamily: 'BentonSans',
   primaryColor: const Color(0xFF53E78B),
   brightness: Brightness.dark,

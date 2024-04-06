@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "704082933224",
+    "project_id": "dishdelight-amadytech",
+    "storage_bucket": "dishdelight-amadytech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704082933224:android:681db22bd3032fbc7ba05d",
+        "android_client_info": {
+          "package_name": "com.example.foodease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsWybzcanSmpzPZ1SNBLUV725WWGLX5gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

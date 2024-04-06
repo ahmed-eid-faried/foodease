@@ -6,9 +6,7 @@ import 'package:foodease/core/utill/images.dart';
 import 'package:foodease/core/widgets/custom_widgets/appbar/custom_app_bar.dart';
 // import 'package:foodease/core/widgets/common/custom_app_bar_widget.dart';
 import 'package:foodease/core/widgets/custom_widgets/custom_scaffold.dart';
-import 'package:foodease/core/widgets/custom_widgets/text_form_field_custom.dart';
 import 'package:foodease/features/home/home.dart';
-import 'package:foodease/features/onboarding/onboarding.dart';
 
 class MessageScreen extends StatelessWidget {
   const MessageScreen({super.key});
